@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'python:2.7'
+    }
+    
+  }
   stages {
-    stage('Unit Test') {
+    stage('Print Hello') {
       steps {
-        dockerNode(image: 'python:2.7.14')
+        sh 'echo "Hello"'
       }
     }
   }
