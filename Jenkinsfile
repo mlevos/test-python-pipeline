@@ -1,14 +1,15 @@
 pipeline {
-  agent {
-    docker {
-      image 'python:2.7'
-    }
-    
-  }
+  agent none
   stages {
-    stage('Print Hello') {
-      steps {
-        sh 'echo "Hello"'
+    stage('Unit Test') {
+      agent {
+        docker { image 'python:2.7' }
+      }
+      steps('Install pytest') {
+        sh 'pip install pytest'
+      }
+      steps('Run Unit Test') {
+        sh 'pip install pytest'
       }
     }
   }
