@@ -8,7 +8,7 @@ pipeline {
         }
         
       }
-      steps('Install pytest') {
+      steps {
         sh 'whoami'
         sh 'hostname'
       }
