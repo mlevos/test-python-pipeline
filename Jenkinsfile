@@ -1,13 +1,13 @@
 pipeline {
-  agent none
+  agent {
+      docker {
+        image 'debian:8'
+      }
+        
+    }
   stages {
     stage('Unit Test') {
-      agent {
-        docker {
-          image 'debian:8'
-        }
-        
-      }
+      
       steps {
         sh 'apt-get update'
       }
