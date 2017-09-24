@@ -4,12 +4,12 @@ pipeline {
     stage('Unit Test') {
       agent {
         docker {
-          image 'python:2.7'
+          image 'debian:8'
         }
         
       }
       steps {
-        sh 'hostname'
+        sh 'apt-get update'
       }
     }
   }
