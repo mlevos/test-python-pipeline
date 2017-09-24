@@ -9,7 +9,7 @@ pipeline {
     stage('Unit Test') {
       
       steps {
-        sh 'apt-get update'
+        sh 'pwd'
       }
     }
   }
