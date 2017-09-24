@@ -7,8 +7,6 @@ pipeline {
       }
       steps('Install pytest') {
         sh 'pip install pytest'
-      }
-      steps('Run Unit Test') {
         sh 'py.test tests'
       }
     }
